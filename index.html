@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="pages/index.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- начало шапки сайта, блок header -->
+  <header class="header">
+    <img src="./images/header-logo.svg" alt="Лого" class="header__logo">
+  </header>
+  <!-- конец шапки сайта, блок header -->
+
+  <!-- основное содержание страницы -->
+  <main class="content">
+    <section class="profile">
+      <div class="profile__info">
+        <img src="images/avatar-cousteau.png" alt="Аватар" class="profile__avatar">
+        <div class="profile__text">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button type="button" class="profile__button-edit button-opacity">
+            <img src="./images/edit.svg" alt="Знак редактирования" class="button-edit__plus">
+          </button>
+          <p class="profile__subtitle">Исследователь океана</p>
+        </div>
+      </div>
+      <button type="button" class="profile__button-add button-opacity">
+        <img src="./images/plus.svg" alt="Знак плюса">
+      </button>
+    </section>
+
+    <section class="elements">
+      <ul class="elements__list list">
+        <li class="element">
+          <img src="./images/pyatigorsk.jpeg" alt="Эолова Арфа" class="element__image">
+          <div class="element__basement">
+            <h2 class="element__title">Пятигорск</h2>
+            <button class="element__button-like">
+              <img src="./images/heart.svg" alt="Нравится" class="element__like">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/kislovodsk.jpeg" alt="Изображение Кисловодск" class="element__image">
+          <div class="element__basement">
+            <h2 class="element__title">Кисловодск</h2>
+            <button class="element__button-like">
+              <img src="./images/heart.svg" alt="Нравится" class="element__like">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/novgorod.jpeg" alt="Памятник «Тысячелетие России»" class="element__image">
+          <div class="element__basement">
+            <h2 class="element__title">Великий Новгород</h2>
+            <button class="element__button-like">
+              <img src="./images/heart.svg" alt="Нравится" class="element__like">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/makhachkala.jpeg" alt="Берег Каспийского моря" class="element__image">
+          <div class="element__basement">
+            <h2 class="element__title">Махачкала</h2>
+            <button class="element__button-like">
+              <img src="./images/heart.svg" alt="Нравится" class="element__like">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/vlidikavkaz.jpeg" alt="Алагирский район" class="element__image">
+          <div class="element__basement">
+            <h2 class="element__title">Владикавказ</h2>
+            <button class="element__button-like">
+              <img src="./images/heart.svg" alt="Нравится" class="element__like">
+            </button>
+          </div>
+        </li>
+        <li class="element">
+          <img src="./images/grozniy.jpeg" alt="Сердце Чечни" class="element__image">
+          <div class="element__basement">
+            <h2 class="element__title">Грозный</h2>
+            <button class="element__button-like">
+              <img src="./images/heart.svg" alt="Нравится" class="element__like">
+            </button>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+  <!-- конец основного содержимого страницы -->
+
+  <!-- начало Подвал сайта, блок footer -->
+  <footer class="footer">
+    <p class="footer__copyright">&copy;&nbsp;2023 Mesto Russia</p>
+  </footer>
+  <!-- конец Подвал сайта, блок footer -->
+  <div class="popup">
+    <form class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <input type="text" placeholder="Имя" class="popup__input popup__input_name_text" required>
+      <input type="text" placeholder="О себе" class="popup__input popup__input_job_text" required>
+      <button type="submit" class="popup__button-submit">Сохранить</button>
+      <button type="button" class="popup__button-close button-opacity">
+        <img src="./images/close.svg" alt="Закрыть" class="popup__close-img">
+      </button>
+    </form>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
