@@ -1,11 +1,9 @@
 .page {
-  margin: 0;
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
   font-family: 'Inter', Arial, sans-serif;
   color: white;
-  background: #000;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
 }

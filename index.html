@@ -6,7 +6,7 @@
   <title>Mesto</title>
   <link rel="stylesheet" href="pages/index.css">
 </head>
-<body>
+<body class="root">
 <div class="page">
 
   <!-- начало шапки сайта, блок header -->
@@ -29,65 +29,77 @@
         </div>
       </div>
       <button type="button" class="profile__button-add button-opacity">
-        <img src="./images/plus.svg" alt="Знак плюса">
+        <img src="./images/plus.svg" alt="Знак плюса" class="profile__add-img">
       </button>
     </section>
 
     <section class="elements">
       <ul class="elements__list list">
-        <li class="element">
-          <img src="./images/pyatigorsk.jpeg" alt="Эолова Арфа" class="element__image">
-          <div class="element__basement">
-            <h2 class="element__title">Пятигорск</h2>
-            <button class="element__button-like">
-              <img src="./images/heart.svg" alt="Нравится" class="element__like">
-            </button>
-          </div>
+        <li>
+          <article class="element">
+            <img src="./images/pyatigorsk.jpeg" alt="Эолова Арфа" class="element__image">
+            <div class="element__basement">
+              <h2 class="element__title">Пятигорск</h2>
+              <button type="button" class="element__button-like">
+                <img src="./images/heart.svg" alt="Нравится" class="element__like">
+              </button>
+            </div>
+          </article>
         </li>
-        <li class="element">
-          <img src="./images/kislovodsk.jpeg" alt="Изображение Кисловодск" class="element__image">
-          <div class="element__basement">
-            <h2 class="element__title">Кисловодск</h2>
-            <button class="element__button-like">
-              <img src="./images/heart.svg" alt="Нравится" class="element__like">
-            </button>
-          </div>
+        <li>
+          <article class="element">
+            <img src="./images/kislovodsk.jpeg" alt="Изображение Кисловодск" class="element__image">
+            <div class="element__basement">
+              <h2 class="element__title">Кисловодск</h2>
+              <button type="button" class="element__button-like">
+                <img src="./images/heart.svg" alt="Нравится" class="element__like">
+              </button>
+            </div>
+          </article>
         </li>
-        <li class="element">
-          <img src="./images/novgorod.jpeg" alt="Памятник «Тысячелетие России»" class="element__image">
-          <div class="element__basement">
-            <h2 class="element__title">Великий Новгород</h2>
-            <button class="element__button-like">
-              <img src="./images/heart.svg" alt="Нравится" class="element__like">
-            </button>
-          </div>
+        <li>
+          <article class="element">
+            <img src="./images/novgorod.jpeg" alt="Памятник «Тысячелетие России»" class="element__image">
+            <div class="element__basement">
+              <h2 class="element__title">Великий Новгород</h2>
+              <button type="button" class="element__button-like">
+                <img src="./images/heart.svg" alt="Нравится" class="element__like">
+              </button>
+            </div>
+          </article>
         </li>
-        <li class="element">
-          <img src="./images/makhachkala.jpeg" alt="Берег Каспийского моря" class="element__image">
-          <div class="element__basement">
-            <h2 class="element__title">Махачкала</h2>
-            <button class="element__button-like">
-              <img src="./images/heart.svg" alt="Нравится" class="element__like">
-            </button>
-          </div>
+        <li>
+          <article class="element">
+            <img src="./images/makhachkala.jpeg" alt="Берег Каспийского моря" class="element__image">
+            <div class="element__basement">
+              <h2 class="element__title">Махачкала</h2>
+              <button type="button" class="element__button-like">
+                <img src="./images/heart.svg" alt="Нравится" class="element__like">
+              </button>
+            </div>
+          </article>
         </li>
-        <li class="element">
-          <img src="./images/vlidikavkaz.jpeg" alt="Алагирский район" class="element__image">
-          <div class="element__basement">
-            <h2 class="element__title">Владикавказ</h2>
-            <button class="element__button-like">
-              <img src="./images/heart.svg" alt="Нравится" class="element__like">
-            </button>
-          </div>
+        <li>
+          <article class="element">
+            <img src="./images/vlidikavkaz.jpeg" alt="Алагирский район" class="element__image">
+            <div class="element__basement">
+              <h2 class="element__title">Владикавказ</h2>
+              <button type="button" class="element__button-like">
+                <img src="./images/heart.svg" alt="Нравится" class="element__like">
+              </button>
+            </div>
+          </article>
         </li>
-        <li class="element">
-          <img src="./images/grozniy.jpeg" alt="Сердце Чечни" class="element__image">
-          <div class="element__basement">
-            <h2 class="element__title">Грозный</h2>
-            <button class="element__button-like">
-              <img src="./images/heart.svg" alt="Нравится" class="element__like">
-            </button>
-          </div>
+        <li>
+          <article class="element">
+            <img src="./images/grozniy.jpeg" alt="Сердце Чечни" class="element__image">
+            <div class="element__basement">
+              <h2 class="element__title">Грозный</h2>
+              <button type="button" class="element__button-like">
+                <img src="./images/heart.svg" alt="Нравится" class="element__like">
+              </button>
+            </div>
+          </article>
         </li>
       </ul>
     </section>
@@ -101,18 +113,20 @@
   </footer>
   <!-- конец Подвал сайта, блок footer -->
   <div class="popup">
-    <form class="popup__container">
+    <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <input type="text" placeholder="Имя" class="popup__input popup__input_name_text" required>
-      <input type="text" placeholder="О себе" class="popup__input popup__input_job_text" required>
-      <button type="submit" class="popup__button-submit">Сохранить</button>
+      <form name="popup__form" class="popup__form">
+        <input type="text" name="name" placeholder="Имя" class="popup__input popup__input_name_text" required>
+        <input type="text" name="about" placeholder="О себе" class="popup__input popup__input_job_text" required>
+        <button type="submit" class="popup__button-submit">Сохранить</button>
+      </form>
       <button type="button" class="popup__button-close button-opacity">
         <img src="./images/close.svg" alt="Закрыть" class="popup__close-img">
       </button>
-    </form>
+    </div>
   </div>
 
 </div>
-<script src="script.js"></script>
+<script src="./scripts/index.js"></script>
 </body>
 </html>

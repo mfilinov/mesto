@@ -3,10 +3,11 @@
   padding: 40px 0 66px;
   min-width: 320px;
   max-width: 880px;
+  flex: 1;
 }
 
 @media screen and (max-width: 580px) {
   .content {
-    padding: 42px 0 48px;
+    padding: 41px 0 48px;
   }
 }

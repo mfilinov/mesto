@@ -7,6 +7,7 @@
   height: 330px;
   display: flex;
   flex-direction: column;
+  gap: 48px;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
