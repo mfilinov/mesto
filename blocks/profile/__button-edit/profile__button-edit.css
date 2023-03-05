@@ -9,7 +9,7 @@
   align-self: center;
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 641px) {
   .profile__button-edit {
     margin: 8px 19px 0 0;
     width: 18px;
