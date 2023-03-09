@@ -1,15 +1,23 @@
-//Объекты для формы popup
-const popup = document.querySelector('.popup');
-let formElement = popup.querySelector('.popup__container');
-let nameInput = formElement.querySelector('.popup__input_name_text');
-let jobInput = formElement.querySelector('.popup__input_job_text');
-let popupButtonClose = popup.querySelector('.popup__button-close');
+//Объекты для формы popup edit
+const popupProfileEditElement = document.querySelector('.popup-profile-edit');
+const formProfileElement = popupProfileEditElement.querySelector('.popup__form');
+const nameInput = formProfileElement.querySelector('.popup__input_el_name');
+const jobInput = formProfileElement.querySelector('.popup__input_el_job');
+const popupButtonCloseElements = document.querySelectorAll('.popup__button-close');
+
+//Profile add
+const popupAddImageElement = document.querySelector('.popup-add-image');
+const formAddImageElement = popupAddImageElement.querySelector('.popup__form');
+const imageNameInputElement = formAddImageElement.querySelector('.popup__input_el_image-name')
+const imageLinkInputElement = formAddImageElement.querySelector('.popup__input_el_image-link')
 
 //Section profile
-const profileBlock = document.querySelector('.profile__text');
+const profileBlock = document.querySelector('.profile');
 const buttonEdit = profileBlock.querySelector('.profile__button-edit');
-let profileTitle = profileBlock.querySelector('.profile__title');
-let profileSubtitle = profileBlock.querySelector('.profile__subtitle');
+const profileTitle = profileBlock.querySelector('.profile__title');
+const profileSubtitle = profileBlock.querySelector('.profile__subtitle');
+const profileButtonAdd = profileBlock.querySelector('.profile__button-add');
+
 
 //Section elements
 const elementsList = document.querySelector('.elements__list');
@@ -18,16 +26,16 @@ const elementsList = document.querySelector('.elements__list');
 const elementTemplate = document.querySelector('#element-template').content;
 
 
-const createElement = (name, link) => {
+const createElement = (item) => {
   const element = elementTemplate.querySelector('.element').cloneNode(true);
-  element.querySelector('.element__image').src = link;
-  element.querySelector('.element__image').alt = `Изображение ${name}`;
-  element.querySelector('.element__title').textContent = name;
+  element.querySelector('.element__image').src = item.link;
+  element.querySelector('.element__image').alt = `Изображение ${item.name}`;
+  element.querySelector('.element__title').textContent = item.name;
   //Изменение состояния like после клика
   element.querySelector('.element__like').addEventListener('click', (evt) => {
     evt.target.classList.toggle('element__button-like_active');
   })
-  elementsList.append(element);
+  return element;
 }
 
 const initialCards = [
@@ -58,27 +66,48 @@ const initialCards = [
 ];
 
 initialCards.forEach(function (item) {
-  createElement(item.name, item.link);
+  const element = createElement(item);
+  elementsList.append(element);
 })
 
-const openPopup = () => {
+const openPopup = (popup) => {
   popup.classList.add('popup_opened');
-  // При открытии формы поля «Имя» и «О себе» должны быть заполнены теми значениями, которые отображаются на странице.
-  nameInput.value = profileTitle.textContent;
-  jobInput.value = profileSubtitle.textContent;
 }
 
-const closePopup = () => {
+const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
 }
 
-const handleFormSubmit = (evt) => {
+buttonEdit.addEventListener('click', () => {
+  openPopup(popupProfileEditElement);
+  // При открытии формы поля «Имя» и «О себе» должны быть заполнены теми значениями, которые отображаются на странице.
+  nameInput.value = profileTitle.textContent;
+  jobInput.value = profileSubtitle.textContent;
+});
+
+profileButtonAdd.addEventListener('click', () => {
+  openPopup(popupAddImageElement);
+  imageNameInputElement.value = '';
+  imageLinkInputElement.value = '';
+});
+
+formProfileElement.addEventListener('submit', (evt) => {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
-  closePopup();
-}
+  closePopup(popupProfileEditElement);
+});
 
-buttonEdit.addEventListener('click', openPopup);
-popupButtonClose.addEventListener('click', closePopup);
-formElement.addEventListener('submit', handleFormSubmit);
+formAddImageElement.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  const objectNameLink = {name:imageNameInputElement.value, link:imageLinkInputElement.value}
+  const element = createElement(objectNameLink);
+  elementsList.prepend(element);
+  closePopup(popupAddImageElement);
+});
+
+//Инициализация всех слушателей для закрытия Popups
+popupButtonCloseElements.forEach(item => {
+  const currentPopup = item.closest('.popup');
+  item.addEventListener('click', () => closePopup(currentPopup))
+})

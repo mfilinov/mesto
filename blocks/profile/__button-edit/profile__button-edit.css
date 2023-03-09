@@ -3,10 +3,10 @@
   padding: 0;
   width: 24px;
   height: 24px;
-  background-color: #000;
   border: white 1px solid;
   cursor: pointer;
   align-self: center;
+  background: transparent url('../../../images/edit.svg') no-repeat center / 10px 10px;
 }
 
 @media screen and (max-width: 641px) {
@@ -15,5 +15,6 @@
     width: 18px;
     height: 18px;
     align-self: flex-start;
+    background-size: 7.5px 7.5px;
   }
 }
