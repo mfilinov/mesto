@@ -30,6 +30,7 @@
 @import url(../blocks/element/__basement/element__basement.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__button-like/element__button-like.css);
+@import url(../blocks/element/__button-like/_active/element__button-like_active.css);
 @import url(../blocks/element/__like/element__like.css);
 
 @import url(../blocks/footer/footer.css);

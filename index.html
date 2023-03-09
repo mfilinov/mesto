@@ -35,72 +35,7 @@
 
     <section class="elements">
       <ul class="elements__list list">
-        <li>
-          <article class="element">
-            <img src="./images/pyatigorsk.jpeg" alt="Эолова Арфа" class="element__image">
-            <div class="element__basement">
-              <h2 class="element__title">Пятигорск</h2>
-              <button type="button" class="element__button-like">
-                <img src="./images/heart.svg" alt="Нравится" class="element__like">
-              </button>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class="element">
-            <img src="./images/kislovodsk.jpeg" alt="Изображение Кисловодск" class="element__image">
-            <div class="element__basement">
-              <h2 class="element__title">Кисловодск</h2>
-              <button type="button" class="element__button-like">
-                <img src="./images/heart.svg" alt="Нравится" class="element__like">
-              </button>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class="element">
-            <img src="./images/novgorod.jpeg" alt="Памятник «Тысячелетие России»" class="element__image">
-            <div class="element__basement">
-              <h2 class="element__title">Великий Новгород</h2>
-              <button type="button" class="element__button-like">
-                <img src="./images/heart.svg" alt="Нравится" class="element__like">
-              </button>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class="element">
-            <img src="./images/makhachkala.jpeg" alt="Берег Каспийского моря" class="element__image">
-            <div class="element__basement">
-              <h2 class="element__title">Махачкала</h2>
-              <button type="button" class="element__button-like">
-                <img src="./images/heart.svg" alt="Нравится" class="element__like">
-              </button>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class="element">
-            <img src="./images/vlidikavkaz.jpeg" alt="Алагирский район" class="element__image">
-            <div class="element__basement">
-              <h2 class="element__title">Владикавказ</h2>
-              <button type="button" class="element__button-like">
-                <img src="./images/heart.svg" alt="Нравится" class="element__like">
-              </button>
-            </div>
-          </article>
-        </li>
-        <li>
-          <article class="element">
-            <img src="./images/grozniy.jpeg" alt="Сердце Чечни" class="element__image">
-            <div class="element__basement">
-              <h2 class="element__title">Грозный</h2>
-              <button type="button" class="element__button-like">
-                <img src="./images/heart.svg" alt="Нравится" class="element__like">
-              </button>
-            </div>
-          </article>
-        </li>
+
       </ul>
     </section>
 
@@ -126,7 +61,36 @@
     </div>
   </div>
 
+  <div class="popup" id="popup">
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <form name="popup__form" class="popup__form">
+        <input type="text" name="image-name" placeholder="Название" class="popup__input popup__input_name_text" required>
+        <input type="text" name="image-link" placeholder="Ссылка на картинку" class="popup__input popup__input_job_text" required>
+        <button type="submit" class="popup__button-submit">Создать</button>
+      </form>
+      <button type="button" class="popup__button-close button-opacity">
+        <img src="./images/close.svg" alt="Закрыть" class="popup__close-img">
+      </button>
+    </div>
+  </div>
+
 </div>
+
+<template id="element-template">
+  <li>
+    <article class="element">
+      <img src="" alt="" class="element__image">
+      <div class="element__basement">
+        <h2 class="element__title"></h2>
+        <div class="element__like">
+          <button type="button" class="element__button-like"></button>
+        </div>
+      </div>
+    </article>
+  </li>
+</template>
+
 <script src="./scripts/index.js"></script>
 </body>
 </html>
