@@ -7,7 +7,7 @@
   height: 32px;
   padding: 0;
   border: none;
-  background-color: rgba(0, 0, 0, 0);
+  background: transparent url('../../../images/close.svg') no-repeat center / contain;
 }
 
 @media screen and (max-width: 580px) {

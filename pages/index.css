@@ -31,6 +31,7 @@
 @import url(../blocks/element/__button-like/element__button-like.css);
 @import url(../blocks/element/__button-like/_active/element__button-like_active.css);
 @import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__button-trash/element__button-trash.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -43,10 +44,10 @@
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__button-submit/popup__button-submit.css);
 @import url(../blocks/popup/__button-close/popup__button-close.css);
-@import url(../blocks/popup/__close-img/popup__close-img.css);
+@import url(../blocks/popup/__image-container/popup__image-container.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
+@import url(../blocks/popup/__figure-image/popup__figure-image.css);
+@import url(../blocks/popup/__figcaption-image/popup__figcaption-image.css);
+@import url(../blocks/popup-open-image/popup-open-image.css);
 
-.popup__open-image-container {
-  position: relative;
-  width: 75vw;
-  height: 75vh;
-}
+@import url(../blocks/popup-open-image/popup-open-image.css);

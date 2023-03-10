@@ -5,6 +5,11 @@ const nameInput = formProfileElement.querySelector('.popup__input_el_name');
 const jobInput = formProfileElement.querySelector('.popup__input_el_job');
 const popupButtonCloseElements = document.querySelectorAll('.popup__button-close');
 
+//Popup полоэкранного режима
+const popupOpenImage = document.querySelector('.popup-open-image');
+const figureImage = popupOpenImage.querySelector('.popup__figure-image');
+const popupFigcaptionImage = popupOpenImage.querySelector('.popup__figcaption-image');
+
 //Profile add
 const popupAddImageElement = document.querySelector('.popup-add-image');
 const formAddImageElement = popupAddImageElement.querySelector('.popup__form');
@@ -25,15 +30,34 @@ const elementsList = document.querySelector('.elements__list');
 //Templates
 const elementTemplate = document.querySelector('#element-template').content;
 
+const openPopup = (popup) => {
+  popup.classList.add('popup_opened');
+}
+
+const closePopup = (popup) => {
+  popup.classList.remove('popup_opened');
+}
 
 const createElement = (item) => {
   const element = elementTemplate.querySelector('.element').cloneNode(true);
-  element.querySelector('.element__image').src = item.link;
-  element.querySelector('.element__image').alt = `Изображение ${item.name}`;
+  const elementImage =element.querySelector('.element__image')
+  elementImage.src = item.link;
+  elementImage.alt = `Изображение ${item.name}`;
   element.querySelector('.element__title').textContent = item.name;
+  //Открытие элемента в полноэкранном режиме по клику на изображение
+  elementImage.addEventListener('click', (evt) => {
+    figureImage.src = item.link;
+    figureImage.alt = `Изображение ${item.name}`;
+    popupFigcaptionImage.textContent = item.name;
+    openPopup(popupOpenImage);
+  })
   //Изменение состояния like после клика
   element.querySelector('.element__like').addEventListener('click', (evt) => {
     evt.target.classList.toggle('element__button-like_active');
+  })
+  //Удаление карточки после клика на иконку trash
+  element.querySelector('.element__button-trash').addEventListener('click', (evt) => {
+    evt.target.closest('.element').remove();
   })
   return element;
 }
@@ -69,14 +93,6 @@ initialCards.forEach(function (item) {
   const element = createElement(item);
   elementsList.append(element);
 })
-
-const openPopup = (popup) => {
-  popup.classList.add('popup_opened');
-}
-
-const closePopup = (popup) => {
-  popup.classList.remove('popup_opened');
-}
 
 buttonEdit.addEventListener('click', () => {
   openPopup(popupProfileEditElement);

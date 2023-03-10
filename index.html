@@ -29,7 +29,7 @@
       <button type="button" class="profile__button-add button-opacity"></button>
     </section>
 
-    <section class="elements">
+    <section class="elements" aria-label="галерея">
       <ul class="elements__list list">
 
       </ul>
@@ -51,9 +51,7 @@
         <input type="text" name="about" placeholder="О себе" class="popup__input popup__input_el_job" required>
         <button type="submit" class="popup__button-submit">Сохранить</button>
       </form>
-      <button type="button" class="popup__button-close button-opacity">
-        <img src="./images/close.svg" alt="Закрыть" class="popup__close-img">
-      </button>
+      <button type="button" class="popup__button-close button-opacity"></button>
     </div>
   </div>
 
@@ -61,35 +59,30 @@
     <div class="popup__container">
       <h2 class="popup__title">Новое место</h2>
       <form name="popup__form" class="popup__form">
-        <input type="text" name="image-name" placeholder="Название" class="popup__input popup__input_el_image-name" required>
-        <input type="text" name="image-link" placeholder="Ссылка на картинку" class="popup__input popup__input_el_image-link" required>
+        <input type="text" name="image-name" placeholder="Название" class="popup__input popup__input_el_image-name"
+               required>
+        <input type="text" name="image-link" placeholder="Ссылка на картинку"
+               class="popup__input popup__input_el_image-link" required>
         <button type="submit" class="popup__button-submit">Создать</button>
       </form>
-      <button type="button" class="popup__button-close button-opacity">
-        <img src="./images/close.svg" alt="Закрыть" class="popup__close-img">
-      </button>
+      <button type="button" class="popup__button-close button-opacity"></button>
     </div>
   </div>
 
   <div class="popup popup-open-image">
-    <div class="popup__open-image-container">
-      <figure>
-        <img src="#" alt="#">
-        <figcaption class=""></figcaption>
+    <div class="popup-image-container">
+      <figure class="popup__figure">
+        <img src="#" alt="#" class="popup__figure-image">
+        <figcaption class="popup__figcaption-image"></figcaption>
       </figure>
-
-
-      <button type="button" class="popup__button-close button-opacity">
-        <img src="./images/close.svg" alt="Закрыть" class="popup__close-img">
-      </button>
+      <button type="button" class="popup__button-close button-opacity"></button>
     </div>
   </div>
-
 </div>
 
 <template id="element-template">
-  <li>
-    <article class="element">
+  <li class="element">
+    <article>
       <img src="" alt="" class="element__image">
       <div class="element__basement">
         <h2 class="element__title"></h2>
@@ -97,6 +90,7 @@
           <button type="button" class="element__button-like"></button>
         </div>
       </div>
+      <button type="button" class="element__button-trash button-opacity"></button>
     </article>
   </li>
 </template>
