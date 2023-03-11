@@ -25,7 +25,7 @@ const profileButtonAdd = profileBlock.querySelector('.profile__button-add');
 
 
 //Section elements
-const elementsList = document.querySelector('.elements__list');
+const elementsContainer = document.querySelector('.elements__list');
 
 //Templates
 const elementTemplate = document.querySelector('#element-template').content;
@@ -91,7 +91,7 @@ const initialCards = [
 
 initialCards.forEach(function (item) {
   const element = createElement(item);
-  elementsList.append(element);
+  elementsContainer.append(element);
 })
 
 buttonEdit.addEventListener('click', () => {
@@ -118,7 +118,7 @@ formAddImageElement.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const objectNameLink = {name:imageNameInputElement.value, link:imageLinkInputElement.value}
   const element = createElement(objectNameLink);
-  elementsList.prepend(element);
+  elementsContainer.prepend(element);
   closePopup(popupAddImageElement);
 });
 
